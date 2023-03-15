@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断质数</title>
+</head>
+<body>
+    <script>
+        // 封装函数，判断传入的数字是否为质数
+        // 特点：智能被1和自己整除，不能被2到num-1之间的数字整除
+        function isPrime(num) {
+            for(var i=2;i<num;i++) {
+                if (num % i ==0) {
+                    return false
+                }
+            }
+            return true
+        }
+
+        //用分解法 遍历到根号下num个数字即可
+        function isPrime1(num) {
+            // 1.获取Num的平方根
+            var temp = parseInt(Math.sqrt(num))
+
+            // 2.循环判断
+            for(var i=2;i<=temp;i++) {
+                if (num % i ==0) {
+                    return false
+                }
+            }
+            return true
+        }
+
+
+
+        // 验证函数
+        alert(isPrime1(3))
+        alert(isPrime1(11))
+        alert(isPrime1(4))
+
+
+    </script>
+</body>
+</html>
