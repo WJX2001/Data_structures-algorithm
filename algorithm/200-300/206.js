@@ -24,23 +24,13 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
-    var reverseList = function(head) {
-    let prev = null, curr = head
-    while (curr) {
-
-        // 定义当前节点的下一个节点为 next
-        const next = curr.next
-        curr.next = prev  // 当前节点的下一个节点 指向为前一个节点
-        prev = curr       // 将前一个节点向前推动，放到当前节点的位置
-        curr = next       // 将当前节点向后推动  null->1->2->3->4->5
-                        /**
-                            当前prev指向null
-                               curr指向 1
-                               然后向前推进
-                               prev 指向1 curr指向2 不停向前迭代
-                         */
-    }
-    return prev
-}
+var reverseList = function (head) {
+  // case base
+  if (head === null || head.next === null) {
+    return head
+  }
+  var last = reverseList(head.next);
+  head.next.next = head
+  head.next = null
+  return last
 }
