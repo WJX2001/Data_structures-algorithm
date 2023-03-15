@@ -13,23 +13,24 @@
  */
 
 function maxDepth(root) {
-    let depth = 0;
-    let res = 0;
+  let depth = 0;
+  let res = 0;
 
-    function traverse(root) {
-    if (root === null) {
+  // 遍历二叉树
+  function traverse(root) {
+    if(root === null){
       return;
     }
+
     // 前序遍历位置
-    depth++;
-    // 遍历的过程中记录最大深度
-    res = Math.max(res, depth);
-    traverse(root.left);
-    traverse(root.right);
+    depth++
+    // 遍历的时候记录最大深度
+    res = Math.max(res,depth);
+    traverse(root.left)
+    traverse(root.right)
     // 后序遍历位置
-    depth--;
-    return res
+    depth--
+
   }
-    traverse(root)
-    return res
+  return res
 }
