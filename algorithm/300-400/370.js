@@ -58,7 +58,7 @@ var Difference = function(nums) {
         var res = new Array(diff.length);
         // 根据差分数组构造结果数组
         res[0] = diff[0]
-        for(let i=i;i<diff.length;i++) {
+        for(let i=1;i<diff.length;i++) {
             res[i] = res[i-1]+diff[i]
         }
         return res
