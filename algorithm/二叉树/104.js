@@ -1,6 +1,6 @@
 // 二叉树的最大深度
 var maxDepth = function (root) {
-    let res = 0
+    let res = 0 
     let depth = 0
     var traverse = function(root){
         if(root === null) return;
