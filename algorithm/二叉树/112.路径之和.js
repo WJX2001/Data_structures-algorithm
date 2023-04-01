@@ -26,3 +26,27 @@ var hasPathSum = function(root, targetSum) {
     traverse(root)
     return bound
 }
+
+
+// 思路二：分解的方式进行处理
+// 先反转左右子树，然后反转左右子节点
+
+var invertTree2 = function(root){
+    var invert = function(root){
+        if(root === null) {
+            return null
+        }
+
+        // 先反转左右子树
+        var left = invert(root.left)
+        var right = invert(root.right)
+
+        // 然后交换左右子节点
+        root.left = right
+        root.right = left
+
+        // 以root为根的这棵二叉树已经被翻转
+        return root
+    }
+    return invert(root)
+}
