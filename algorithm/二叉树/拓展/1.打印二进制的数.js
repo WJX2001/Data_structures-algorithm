@@ -9,6 +9,7 @@ function printBinary(n) {
       console.log(path);
       return 
     } 
+    // 如果是10进制 或者 16进制 把i的值改一下
     for(let i=0;i<2;i++){
         path +=i
         printBinary(n-1)
