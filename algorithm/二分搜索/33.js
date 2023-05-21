@@ -42,3 +42,4 @@ var search = function(nums, target) {
     // while结束还没找到，说明target不存在
     return -1
 };
+
